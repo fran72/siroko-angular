@@ -4,10 +4,13 @@ import {MatRadioModule} from '@angular/material/radio';
 // import { FormsModule } from '@angular/forms';
 // import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { CountdownComponent } from './components/countdown/countdown.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatRadioModule, CommonModule],
+  imports: [RouterOutlet, MatRadioModule, CommonModule,
+    CountdownComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
