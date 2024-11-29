@@ -2,12 +2,28 @@
 
   <div class="content">
     <div class="logo"></div>
-    <div class="steps">steps</div>
-    <div class="title">title</div>
-    <div class="subtitle">subtitle</div>
-    <div class="wizard">wizard</div>
-  </div>
+    <div class="steps">Paso 1 de 2</div>
+    <div class="title">VAMOS ALLÁ</div>
+    <div class="subtitle">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida. </div>
+    
+    <div class="wizard">
+      <div class="wizard-text">TExt</div>
+      
+      <!-- <div class="wizard-block" *ngFor="let question of questions; let i = index">
+        <div class="wizard-block-title">{{question.title}}</div>
+        <div class="wizard-block-subtitle">{{question.subtitle}}</div>
+      </div> -->
 
+      <mat-radio-group aria-label="Select an option" class="radio">
+        <!-- <mat-radio-button value="1" class="radio-option" *ngFor="let question of questions; let i = index">Option 1</mat-radio-button> -->
+        <mat-radio-button value="1" class="radio-option">Option 1</mat-radio-button>
+        <mat-radio-button value="2" class="radio-option">Option 2</mat-radio-button>
+      </mat-radio-group>
+
+
+    </div>
+
+  </div>
   <div class="footer">z</div>
   
 </main>
