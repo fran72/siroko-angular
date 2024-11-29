@@ -4,6 +4,18 @@
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
+
+
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control+.mdc-radio__background .mdc-radio__outer-circle {
+  border-color: rgb(255, 255, 255) !important;
+  --mat-radio-checked-ripple-color: none !important;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle {
+  border-color: rgb(255, 255, 255) !important;
+  --mat-radio-checked-ripple-color: none !important;
+}
+
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -41,4 +53,33 @@ body {
     padding: 0;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Global fonts */
+@font-face {
+  font-family: 'inter-regular';
+  src: url('./assets/fonts/inter/Inter_18pt-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'inter-light';
+  src: url('./assets/fonts/inter/Inter_18pt-Light.ttf');
+}
+
+@font-face {
+  font-family: 'inconsolata';
+  src: url('./assets/fonts/inconsolata/Inconsolata-Light.ttf');
+}
+
+@font-face {
+  font-family: 'liberator-siroko-heavy';
+  src: url('./assets/fonts/liberator-siroko/LiberatorSIROKO-Heavy.ttf');
+}
+
+// @font-face {
+//   font-family: 'Montserrat-Bold';
+//   src: url('../../assets/fonts/Montserrat-Bold.ttf');
+// }
+
+* { font-family: 'liberator-siroko'; }
+
+

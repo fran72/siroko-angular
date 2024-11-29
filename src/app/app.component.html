@@ -2,12 +2,16 @@
 
   <div class="content">
     <div class="logo"></div>
-    <div class="steps">Paso 1 de 2</div>
-    <div class="title">VAMOS ALLÁ</div>
-    <div class="subtitle">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida. </div>
-    
+
+    <div class="texts">
+      <div class="steps">PASO 1 DE 2</div>
+      <div class="title">¡VAMOS ALLÁ!</div>
+      <div class="subtitle">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida. </div>
+    </div>
+
+
     <div class="wizard">
-      <div class="wizard-text">TExt</div>
+      <div class="wizard-text">USO SIROKO DESDE...</div>
       
       <!-- <div class="wizard-block" *ngFor="let question of questions; let i = index">
         <div class="wizard-block-title">{{question.title}}</div>
@@ -17,7 +21,7 @@
       <mat-radio-group aria-label="Select an option" class="radio">
         <!-- <mat-radio-button value="1" class="radio-option" *ngFor="let question of questions; let i = index">Option 1</mat-radio-button> -->
         <mat-radio-button value="1" class="radio-option">Option 1</mat-radio-button>
-        <mat-radio-button value="2" class="radio-option">Option 2</mat-radio-button>
+        <mat-radio-button value="2" class="radio-option" *ngFor="let question of questions; let i = index">Option 2</mat-radio-button>
       </mat-radio-group>
 
 
