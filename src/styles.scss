@@ -15,6 +15,14 @@
   --mat-radio-checked-ripple-color: none !important;
 }
 
+// ::ng-deep 
+.mdc-label{
+  font-family: 'inconsolata';
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+}
+
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
