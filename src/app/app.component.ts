@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
   
   setStep(step: number) {
     this.step = step;
+    if (this.step < 2) this.selectedOption = this.wizardOptions[this.step].questions[0];
 
     if (step === 2) {
       this.generateCode();

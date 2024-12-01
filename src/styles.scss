@@ -78,6 +78,11 @@ html, body { height: 100%; }
 }
 
 @font-face {
+  font-family: 'inter-thin';
+  src: url('./assets/fonts/inter/Inter_18pt-Thin.ttf');
+}
+
+@font-face {
   font-family: 'inconsolata';
   src: url('./assets/fonts/inconsolata/Inconsolata-Light.ttf');
 }

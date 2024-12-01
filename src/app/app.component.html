@@ -1,4 +1,5 @@
-<main class="container padding">
+<div class="container padding">
+  
   <div class="content">
 
 
@@ -20,21 +21,19 @@
 
 
 
-    <ng-container *ngIf="step === 0">
+    <ng-container *ngIf="step === 0 || step === 1">
       <div class="wizard">
         <div class="wizard-text">USO SIROKO DESDE...</div>
         
         <mat-radio-group aria-label="Select an option" class="wizard-radio">
 
-          <mat-radio-button class="wizard-radio-option"
-          [value]="question"
-          [ngClass]="{'wizard-radio-option-selected': isSelected(0, question)}"
-          *ngFor="let question of wizardOptions[0].questions; let i = index" (click)="onSelect(question)" [checked]="isItemChecked(0, question)">  {{question}}
+          <mat-radio-button class="wizard-button wizard-radio-option" [value]="question" [ngClass]="{'wizard-radio-option-selected': isSelected(step, question)}"
+          *ngFor="let question of wizardOptions[step].questions; let i = index" (click)="onSelect(question)" [checked]="isItemChecked(step, question)">  {{question}}
           </mat-radio-button>
         </mat-radio-group>
 
-        <!-- <div class="wizard-next" (click)="setStep(1)">Siguiente <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon> -->
-        <!-- </div> -->
+        <div class="wizard-next" (click)="setStep(step+1)">Siguiente  <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon>
+        </div>
 
       </div>
     </ng-container>
@@ -62,17 +61,10 @@
     
   </div>
 
-
-
-
-
-  <div class="footer">Footer</div>
-
-
-
-
-
-
-</main>
+</div>
+<div class="footer">
+  <div>Footer</div>
+  <div>Footer</div>
+</div>
 
 <router-outlet />
