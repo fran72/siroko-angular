@@ -15,10 +15,14 @@
   --mat-radio-checked-ripple-color: none !important;
 }
 
+mat-mdc-radio-button mat-accent mat-mdc-radio-checked {
+  background-color: rgb(255, 255, 255) !important;
+}
+
 // ::ng-deep 
 .mdc-label{
   font-family: 'inconsolata';
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 400;
   color: white;
 }

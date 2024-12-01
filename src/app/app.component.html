@@ -1,7 +1,13 @@
 <main class="container padding">
-
   <div class="content">
+
+
+
     <div class="logo"></div>
+
+
+
+
 
     <div class="texts">
       <div class="steps">{{stepOptions[step].title}}</div>
@@ -9,45 +15,64 @@
       <div class="subtitle" *ngIf="step===1">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida. </div>
     </div>
 
-    <ng-container *ngIf="step === 0 || step === 1">
+
+
+
+
+
+    <ng-container *ngIf="step === 0">
       <div class="wizard">
         <div class="wizard-text">USO SIROKO DESDE...</div>
         
-        <mat-radio-group aria-label="Select an option" class="radio">
-          <!-- <mat-radio-button value="1" class="radio-option">Option 1</mat-radio-button> -->
-          <mat-radio-button 
-          value="2" 
-          class="radio-option" 
-          *ngFor="let question of wizardOptions[step].questions; let i = index"
-          (click)="onSelect(question)"
-          >{{question}}</mat-radio-button>
+        <mat-radio-group aria-label="Select an option" class="wizard-radio">
+
+          <mat-radio-button class="wizard-radio-option"
+          [value]="question"
+          [ngClass]="{'wizard-radio-option-selected': isSelected(0, question)}"
+          *ngFor="let question of wizardOptions[0].questions; let i = index" (click)="onSelect(question)" [checked]="isItemChecked(0, question)">  {{question}}
+          </mat-radio-button>
         </mat-radio-group>
-        <div class="next" (click)="setStep(step+1)">Siguiente <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon></div>
+
+        <!-- <div class="wizard-next" (click)="setStep(1)">Siguiente <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon> -->
+        <!-- </div> -->
+
       </div>
     </ng-container>
+
+
 
     <ng-container *ngIf="step === 2">
       <div class="wizard">
         <div class="wizard-text">LO PROMETIDO ES DEUDA</div>
-        <div class="option code">
-          <div class="text">{{code}}</div>
-          <div class="copy" (click)="copyCode()">copy</div>
+        <div class="wizard-option">
+          <div class="wizard-code">{{code}}</div>
+          <div class="wizard-copy" (click)="copyCode()">copy</div>
         </div>
-        <div class="instructions">Introduce este código en tu próxima compra para conseguir tu premio. ¡Disponible durante 20 minutos!</div>
-        <div class="option" *ngIf="countDownActivated && !countDownFinished"><mat-icon aria-hidden="false" aria-label="access alarm" fontIcon="access_alarm"></mat-icon>  {{time.minutes}} : {{time.seconds}}</div>
-        <div class="outdated" *ngIf="countDownActivated && countDownFinished">Codigo caducado. <span class="restart">Reiniciar</span></div>
-        <div class="option next" (click)="setStep(0)">Ir a Siroko.com <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon></div>
+        <div class="wizard-instructions">Introduce este código en tu próxima compra para conseguir tu premio. ¡Disponible durante 20 minutos!</div>
+        <div class="wizard-option" *ngIf="countDownActivated && !countDownFinished"><mat-icon aria-hidden="false" aria-label="access alarm" fontIcon="access_alarm"></mat-icon>  {{time.minutes}} : {{time.seconds}}</div>
+        <div class="wizard-outdated" *ngIf="countDownActivated && countDownFinished">Codigo caducado. <span class="restart">Reiniciar</span></div>
+        <div class="wizard-next" (click)="setStep(0)">Ir a Siroko.com <mat-icon aria-hidden="false" aria-label="arrow right" fontIcon="arrow_right_alt"></mat-icon></div>
       </div>
     </ng-container>
+
+
+
+
+
     
   </div>
 
-  <!-- <div class="timer">
-    <p>{{time.minutes}} : {{time.seconds}}</p>
-  </div> -->
-   
+
+
+
 
   <div class="footer">Footer</div>
+
+
+
+
+
+
 </main>
 
 <router-outlet />
